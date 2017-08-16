@@ -17,10 +17,17 @@
   "author": "hk-ben",
   "devDependencies": {
     "electron": "~1.6.2",
+    "electron-builder": "^19.22.1",
     "vue": "~2.3.3"
   },
   "dependencies": {
     "electron-settings": "^3.1.1",
     "lodash": "^4.17.4"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "win": {
+      "target": "zip"
+    }
   }
 }
