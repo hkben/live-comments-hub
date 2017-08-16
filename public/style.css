@@ -1,0 +1,84 @@
+html, body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: rgba(255, 255, 6, 0);
+}
+
+html::-webkit-scrollbar, body ::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: #e0e0e0;
+}
+
+body.active {
+  background: rgba(255, 255, 6, 0);
+}
+
+.move {
+  -webkit-app-region: drag;
+  position: fixed;
+  text-align: right;
+  padding: 10px;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+
+.comment {
+  display: flex;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  padding: 1% 0;
+  word-break: break-all;
+}
+
+.user-image {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+  height: 100%;
+}
+
+.user-image img {
+  height: auto;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.user-image .fa {
+  position: absolute;
+  font-size: 4vw;
+  top: 50%;
+  right: 0%;
+}
+
+.content {
+  display: inline-block;
+  width: 90%;
+  height: 100%;
+  padding-left: 2%;
+}
+
+.superChatEvent {
+  background-color: rgba(68, 206, 85, 0.75);
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+.scroll-button {
+  display: none;
+  text-align: center;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.scroll-button i {
+  font-size: 50px;
+  color: #4084f1;
+  cursor: pointer;
+}

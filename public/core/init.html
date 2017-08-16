@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Initialization - Live Comments Hub</title>
+  <link rel="stylesheet" href="core.css" />
+ </head>
+
+<body>
+
+  <form onsubmit="return formSubmit()">
+
+    <fieldset>
+      <legend>Initialization</legend>
+
+      <div class="form-element">
+        <label for="facebook-token">Facebook Live ID:</label>
+        <input type="text" class="form-input" id="facebook-live-id">
+      </div>
+
+      <div class="form-element">
+        <label for="facebook-token">Youtube Live ID:</label>
+        <input type="text" class="form-input" id="youtube-live-id">
+      </div>
+
+      <div class="form-element">
+        <input type="submit" class="form-button" value="Go !">
+        <input type="button" class="form-button" id="cancel" value="Cancel">
+      </div>
+
+    </fieldset>
+
+  </form>
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="init.js"></script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Index</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="move">
+    <i class="fa fa-arrows" aria-hidden="true"></i>
+  </div>
+
+  <div id="table">
+    <template v-for="comment in comments">
+		  <template v-if="comment.type == 'superChatEvent' ">
+		    <div class="comment superChatEvent" >
+
+			     <div class="user-image"><img :src="comment.userImage">
+			       <i class="fa" v-bind:class="`fa-` + comment.platform" aria-hidden="true"></i>
+			     </div>
+			     <div class="content">
+				      <strong>{{ comment.user }}</strong>	{{ comment.amountDisplayString }} <br>{{ comment.userComment }}
+			     </div>
+		    </div>
+		  </template>
+    <template v-else>
+		    <div class="comment" v-bind:class="comment.platform">
+			     <div class="user-image"><img :src="comment.userImage">
+			       <i class="fa" v-bind:class="`fa-` + comment.platform" aria-hidden="true"></i>
+			     </div>
+
+			     <div class="content">
+				      <strong>{{ comment.user }}</strong>	{{ comment.message }}
+			      </div>
+			  </div>
+		  </template>
+    </template>
+  </div>
+
+  <div class="scroll-button" id="scrollBtn">
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  </div>
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="./vue.min.js"></script>
+  <script src="./main.js"></script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
+</body>
+
+</html>

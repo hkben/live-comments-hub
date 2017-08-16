@@ -1,0 +1,26 @@
+{
+  "name": "live-comments-hub",
+  "version": "1.0.0",
+  "description": "Display all live platforms comments in one place",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "stream",
+    "comments",
+    "live",
+    "facebook",
+    "youtube"
+  ],
+  "author": "hk-ben",
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "vue": "~2.3.3"
+  },
+  "dependencies": {
+    "electron-settings": "^3.1.1",
+    "lodash": "^4.17.4"
+  }
+}

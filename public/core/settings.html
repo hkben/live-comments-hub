@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Settings - Live Message Hub</title>
+  <link rel="stylesheet" href="core.css" />
+ </head>
+
+<body>
+
+  <form onsubmit="return formSubmit()">
+
+    <fieldset>
+      <legend>Settings</legend>
+
+      <div class="form-element">
+        <label for="facebook-token">Facebook App Token:</label>
+        <input type="text" class="form-input" id="facebook-app-token">
+      </div>
+
+      <div class="form-element">
+        <label for="facebook-token">Google Apis Token:</label>
+        <input type="text" class="form-input" id="google-api-token">
+      </div>
+
+      <div class="form-element">
+        <input type="submit" class="form-button" value="Yes">
+        <input type="button" class="form-button" id="cancel" value="Cancel">
+      </div>
+
+    </fieldset>
+
+  </form>
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="settings.js"></script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
+</body>
+
+</html>
