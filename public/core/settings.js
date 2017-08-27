@@ -5,6 +5,8 @@ const ipcRenderer = require( 'electron' ).ipcRenderer;
 
 const facebookToken = document.getElementById( 'facebook-app-token' )
 const googleToken = document.getElementById( 'google-api-token' )
+const twitchUsername = document.getElementById( 'twitch-username' )
+const twitchToken = document.getElementById( 'twitch-token' )
 const cancelBtn = document.getElementById( 'cancel' )
 
 
@@ -22,6 +24,15 @@ function formSubmit()
     if ( googleToken.value != null ) {
         settings.set( 'token.google', googleToken.value );
     }
+
+    if ( twitchUsername.value != null && twitchToken.value != null ) {
+
+        settings.set( 'token.twitchUsername', twitchUsername.value );
+        settings.set( 'token.twitch', twitchToken.value );
+
+    }
+
+    //TODO : Checking?
 
     mainWindow.close();
     return false;
@@ -41,6 +52,14 @@ if ( settings.has( 'token' ) ) {
 
     if ( settings.has( 'token.google' ) ) {
         googleToken.value = settings.get( 'token.google' );
+    }
+
+    if ( settings.has( 'token.twitchUsername' ) ) {
+        twitchUsername.value = settings.get( 'token.twitchUsername' );
+    }
+
+    if ( settings.has( 'token.twitch' ) ) {
+        twitchToken.value = settings.get( 'token.twitch' );
     }
 
 }

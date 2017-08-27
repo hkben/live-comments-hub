@@ -5,6 +5,7 @@ const webContents = require('electron').webContents;
 
 var Youtube;
 var Facebook;
+var Twitch;
 
 function methods() {
 	this.messageHub = [];
@@ -30,15 +31,22 @@ ipcMain.on('initialization', function (event, arg) {
 
 	let platfrom = JSON.parse(arg);
 
-	if( platfrom.youtube.length > 0){
+	if( platfrom.youtube && platfrom.youtube.length > 0){
 		// console.log("youtube started");
 		Youtube = require('./platforms/youtube')( platfrom.youtube );
 	}
 
-	if( platfrom.facebook.length > 0 ){
+	if( platfrom.facebook && platfrom.facebook.length > 0 ){
 		// console.log("facebook started");
 		Facebook = require('./platforms/facebook')( platfrom.facebook );
 	}
+
+	if( platfrom.twitch && platfrom.twitch.length > 0 ){
+		// console.log("twitch started");
+		Twitch = require('./platforms/twitch')( platfrom.twitch );
+		Twitch.connent();
+	}
+
 
 
 	//send response to mainbrowser

@@ -4,6 +4,7 @@ const ipcRenderer = require( 'electron' ).ipcRenderer;
 
 const facebookLive = document.getElementById( 'facebook-live-id' )
 const youtubeLive = document.getElementById( 'youtube-live-id' )
+const twitchChannel = document.getElementById( 'twitch-channel-id' )
 const cancelBtn = document.getElementById( 'cancel' )
 
 
@@ -13,21 +14,31 @@ function formSubmit()
 {
     var data = {};
 
-    if ( facebookLive.value != null ) {
+    if ( facebookLive.value != "" ) {
         data.facebook = facebookLive.value;
     }
 
-    if ( youtubeLive.value != null ) {
+    if ( youtubeLive.value != "" ) {
         data.youtube = youtubeLive.value;
     }
 
-    var json = JSON.stringify( data );
+    if ( twitchChannel.value != "" ) {
+        data.twitch = twitchChannel.value;
+    }
 
-    localStorage.setItem( 'initialization', json );
 
-    ipcRenderer.send( 'initialization', json );
+    if ( data.facebook || data.youtube || data.twitch ) {
 
-    mainWindow.close();
+        var json = JSON.stringify( data );
+
+        localStorage.setItem( 'initialization', json );
+
+        ipcRenderer.send( 'initialization', json );
+
+        mainWindow.close();
+
+    }
+
     return false;
 }
 
@@ -43,5 +54,6 @@ if ( localStorage && localStorage.getItem( 'initialization' ) ) {
 
     facebookLive.value = data.facebook ? data.facebook : "";
     youtubeLive.value = data.youtube ? data.youtube : "";
+    twitchChannel.value = data.twitch ? data.twitch : "";
 
 }
