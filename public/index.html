@@ -33,7 +33,7 @@
 			     </div>
 
 			     <div class="content">
-				      <strong>{{ comment.user }}</strong>	{{ comment.message }}
+				      <strong>{{ comment.user }}</strong>	<div class="html" v-html="comment.message"></div>
 			      </div>
 			  </div>
 		  </template>

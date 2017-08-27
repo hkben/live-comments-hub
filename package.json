@@ -2,6 +2,7 @@
   "name": "live-comments-hub",
   "version": "1.0.0",
   "description": "Display all live platforms comments in one place",
+  "repository": "https://github.com/hkben/live-comments-hub.git",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
