@@ -15,7 +15,7 @@ Display all live platforms comments in one place
   - Badges , Colors (WIP)
 
 ## Release
-* Win - [live-comments-hub 1.0.0.exe](https://drive.google.com/file/d/0B_qoVl4LC8hKREJvZTBWVE8zcXc/view?usp=sharing)
+* Win - [live-comments-hub 1.0.1.exe](https://drive.google.com/file/d/0B_qoVl4LC8hKSmMxOXhFLUJ4WTQ/view?usp=sharing)
 * Mac OS (WIP)
 
 ## How to Use?
