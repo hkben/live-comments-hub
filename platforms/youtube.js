@@ -1,3 +1,4 @@
+const _ = require( 'lodash' );
 const request = require( 'request' );
 const settings = require( 'electron-settings' );
 
@@ -10,6 +11,7 @@ function methods( videoid ) {
     this.lastMsgId = null;
     this.api_token = settings.get( 'token.google' ); //config
     this.liveStreamingDetails = [];
+    this.first_run = true;
 
     var self = this;
 
@@ -100,6 +102,12 @@ methods.prototype.commentsProcess = function( data ) {
         return false;
     }
 
+    if ( this.first_run ) {
+        var last = _.last( data.items );
+        this.lastMsgId = last.id;
+        this.first_run = false;
+        return false;
+    }
 
     for ( var i in data.items ) {
 

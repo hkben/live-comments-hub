@@ -9,6 +9,7 @@ function methods( videoid ) {
     this.lastMsgId = null;
     this.videoid = videoid;
     this.api_token = settings.get( 'token.facebook' );
+    this.first_run = true;
 
 };
 
@@ -35,6 +36,7 @@ methods.prototype.getComment = function( callback ) {
     }, function( error, response, body ) {
 
 
+        //TODO Error Handle
 
         if ( !body.error ) {
             data = JSON.parse( body );
@@ -62,6 +64,13 @@ methods.prototype.commentsProcess = function( data ) {
     var newMsgFlag;
 
     if ( typeof data == "undefined" ) {
+        return false;
+    }
+
+    if ( this.first_run ) {
+        var last = _.last( data );
+        this.lastMsgId = last.id;
+        this.first_run = false;
         return false;
     }
 
