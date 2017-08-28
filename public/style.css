@@ -60,6 +60,10 @@ body.active {
   padding-left: 2%;
 }
 
+.content .html {
+  display: inline;
+}
+
 .superChatEvent {
   background-color: rgba(68, 206, 85, 0.75);
   padding: 5px;
