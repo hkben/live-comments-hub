@@ -7,7 +7,6 @@ Display all live platforms comments in one place
 ![Live Comments Hub](screenshot.jpg)
 
 
-
 ## Supported Video Platforms
 * Facebook
 * Youtube ~~~(Support SuperChat)~~~
@@ -20,19 +19,32 @@ Display all live platforms comments in one place
 * Mac OS (WIP)
 
 ## How to Use?
-You will need Facebook App Token and Google Api Token . Open the APP and Right click the icon on the tray. Enter the token in Settings Page , then you can enter video id in Initialization page.
+ Open the APP and Right click the icon on the tray. Enter the token in Settings Page , then you can enter video id in Initialization page.
 
-* Facebook Live
+#### Facebook Live
+
+Create a facebook apps [Here](https://developers.facebook.com/) , and get your App Token [Here](https://developers.facebook.com/tools/accesstoken/)
+
+- Video ID
 ```
 https://www.facebook.com/<PageID/UID>/posts/<Video_id_Here>
 ```
 
-* Youtube Live
+#### Youtube Live
+
+Create a Google Apis [Here](https://console.developers.google.com/) , select
+"YouTube Data API v3" , add an API Token in "Credentials" page
+
+- Video ID
 ```
 https://www.youtube.com/watch?v=<Video_id_Here>
 ```
 
-* Twitch
+#### Twitch
+
+Get your OAuth Token [Here](http://twitchapps.com/tmi/)
+
+- Channel ID
 ```
 https://www.twitch.tv/<Channel_ID_Here>
 ```
@@ -40,7 +52,7 @@ https://www.twitch.tv/<Channel_ID_Here>
 ## Planning
 
 * Custom UI
-* More Configurable Settings (like ignoring old commenys on start and change background-color)
+* More Configurable Settings (like ignoring old comments on start and change background-color)
 * Logging
 
 

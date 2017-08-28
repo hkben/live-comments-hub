@@ -1,6 +1,6 @@
 {
   "name": "live-comments-hub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Display all live platforms comments in one place",
   "repository": "https://github.com/hkben/live-comments-hub.git",
   "main": "main.js",
@@ -8,14 +8,13 @@
     "start": "electron ."
   },
   "keywords": [
-    "Electron",
-    "stream",
-    "comments",
+    "electron",
     "live",
     "facebook",
-    "youtube"
+    "youtube",
+    "twitch"
   ],
-  "author": "hk-ben",
+  "author": "hkben",
   "devDependencies": {
     "electron": "~1.6.2",
     "electron-builder": "^19.22.1",
@@ -23,12 +22,14 @@
   },
   "dependencies": {
     "electron-settings": "^3.1.1",
+    "irc": "^0.5.2",
     "lodash": "^4.17.4"
   },
   "build": {
     "appId": "com.example.app",
     "win": {
-      "target": "zip"
+      "target": "portable",
+      "icon": "icon.ico"
     }
   }
 }
